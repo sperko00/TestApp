@@ -38,14 +38,17 @@ class App extends Component {
     })
   }
   async componentDidMount() {
-    fetch("http://www.colr.org/json/color/random").then(res => res.json()).then(data => this.setState({ fetchedColor: "#" + data.colors[0].hex })).catch(error => alert(error));
+    fetch("http://www.colr.org/json/color/random")
+      .then(res => res.json())
+      .then(data => this.setState({ fetchedColor: "#" + data.colors[0].hex }))
+      .catch(error => alert(error));
   }
   render() {
     return (
       <div className="app">
         <div className="text-input-section">
           <h1>Enter some text in text field!</h1>
-          <Input setTextValue={this.setTextValue}></Input>
+          <Input callback={this.setTextValue}></Input>
           <Text text={this.state.text} color={this.state.textColor} isVisible={this.state.isTextVisible}></Text>
         </div>
         <div className="change-color-section">

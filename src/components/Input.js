@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Input.css';
 
 class Input extends Component {
     constructor(props) {
@@ -6,12 +7,12 @@ class Input extends Component {
         this.state = { inputValue: "" };
     }
     handleTextChange = (e) => {
-        this.setState({ inputValue: e.target.value }, this.props.setTextValue(e.target.value));
+        this.setState({ inputValue: e.target.value }, this.props.callback(e.target.value));
 
     }
     render() {
         return (
-            <input type="text" value={this.state.inputValue} onChange={this.handleTextChange}></input>
+            <input className="input-field" type="text" value={this.state.inputValue} onChange={this.handleTextChange}></input>
         );
     }
 }

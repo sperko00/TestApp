@@ -12,6 +12,16 @@
   align-items: center;
   flex-direction: column;
 }
+.text-input-section > h1 {
+  color: #2b2b80;
+}
 .change-color-section{
   margin: 20px 0;
+}
+.change-color-section > button{
+  cursor: pointer;
+  padding: 1rem 3rem;
+  border: none;
+  color: white;
+  background: #323bc6;
 }
